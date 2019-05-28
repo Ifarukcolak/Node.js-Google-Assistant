@@ -19,11 +19,23 @@ Login [Dialogflow](https://dialogflow.com/) with your google account and then cl
 ![Screenshot](dialogflow.png)
 
 **Intents** are simple messaging objects that describe how to do something [You can find here](https://developers.google.com/actions/reference/rest/intents).
-There are two Default Intent in chatbot, "Default Welcome Intent" and "Default Fallback Intent". I can explain easily Intents and Intents feature with simple example. 
+There are two Default Intent in chatbot, *"Default Welcome Intent"* and *"Default Fallback Intent"*. I can explain easily Intents and Intents feature with simple example. 
 
-Assistant and user play a game each other, Assistant keeps a number between 0-10 and user tries to guess with three rights. Assistant catches the request with **"guess_number"** intent. Add possible messages to the  **"Training phrases"** in "guess_number" intent like "My guess number is 5" or "number is 3". 
+Assistant and user play a game each other, Assistant keeps a number between 0-10 and user tries to guess with three rights. Assistant catches the request with **"guess_number"** intent. Add possible messages to the  **"Training phrases"** in "guess_number" intent like *"My guess number is 5"* or *"number is 3"*. 
 
-When the user make a mistake guess, user's right should decrease. 
+When the user make a mistake guess, assistant should decrease the number of rights so to do that, assistant uses [**User storage**](https://developers.google.com/actions/assistant/save-data). There is simple piece of code example , 
+
+```javascript
+app.intent('Default Welcome Intent', conv => {
+  conv.user.storage.number_of_rights=5;
+  conv.ask(`Welcome! You have ${conv.user.storage.number_of_rights} rights to guess my number. Say a number.`);
+});
+```
+**How can the Assistant catch the *number* in request ?**
+Assistant uses **entities** to catch specific value in the request. For this example, assistant needs a *number* and there is already  *sys.number* entity defined by default. Entities seems as,
+
+
+To reach these values in backend, 
 
 
 
