@@ -34,10 +34,24 @@ app.intent('Default Welcome Intent', conv => {
 **How can the Assistant catch the *number* in request ?**
 Assistant uses **entities** to catch specific value in the request. For this example, assistant needs a *number* and there is already  *sys.number* entity defined by default. Entities seems as,
 
+![Entities in Training Phases](trainigphases.JPG)
+![Actions and Paramaters](actionsandparamaters.JPG)
 
-To reach these values in backend, 
+To reach these values in backend, *conv.parameters.PARAMATER_NAME* is used.
 
+```javascript
+app.intent('guess_number', conv => {
+ console.log('guess : ',conv.parameters.number);
+  if(conv.parameters.number==number){
+     conv.ask('That is right. Thanks');
+     }
+......
+```
+After adding intent , entities and necessary code blocks; every wrong guess, assistant decrease the *conv.user.storage.number_of_rights*.
 
+There are two ways to deploy a assistant. In FullFilment
+
+## Actions On Google
 
 
  
