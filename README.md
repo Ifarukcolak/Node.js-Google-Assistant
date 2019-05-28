@@ -49,9 +49,15 @@ app.intent('guess_number', conv => {
 ```
 After adding intent , entities and necessary code blocks; every wrong guess, assistant decrease the *conv.user.storage.number_of_rights*.
 
-There are two ways to deploy a assistant. In FullFilment
+There are two ways to deploy a assistant. If you click Fulfillment tab, you can see this screen. 
+![Fulfillment](Fulfillment.JPG)
+
+Inline editor is online development enviroment. *Just type your code and deploy.*
+If you have a web service that listen to request from dialogflow, you can type service url and dialogflow can speak to your service.
+For this example, *firebase functions* are used so our assistant backend **deployed on firebase**.
 
 ## Actions On Google
+Actions On Google is a developer platform that extends asisstant's functionalities, deploy assistant as a product for Alpha (up to 20 users), Beta (up to 200 users) or Production ,and sets general settings of assistant. At the same time, there is a simulator to test assistant on this platform. Another important thing in this platform is "Account Linking" and I will explain in another project. 
 
 
  
