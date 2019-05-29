@@ -59,5 +59,21 @@ For this example, *firebase functions* are used so our assistant backend **deplo
 ## Actions On Google
 Actions On Google is a developer platform that extends asisstant's functionalities, deploy assistant as a product for Alpha (up to 20 users), Beta (up to 200 users) or Production ,and sets general settings of assistant. At the same time, there is a simulator to test assistant on this platform. Another important thing in this platform is "Account Linking" and I will explain in another project. 
 
+## Firebase
+
+Firebase is a development enviroment that has many services as *Real Time Database*,*Hosting*,*Cloud Messaging*,*Storage*,*Hosting*, *Functions*. In this project, *Firebase Functions* is used to deploy assistant. Let's explain deploy assistant to the firebase functions. 
+
+Clone this project, then open command line and install firebase tools with this code.
+```shell
+npm i firebase-tools
+```
+Setup the Firebase feautres, execute this command, then select the functions .
+```shell
+firebase init
+```
+![Firebase CLI](firebase-cli.JPG)
+
+
+
 
  
