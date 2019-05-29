@@ -16,7 +16,7 @@ Dialogflow is a platform to create chatbot and setting Intent and Entities. With
 Firstly , let's explain Dialogflow concepts with images and more details. 
 Login [Dialogflow](https://dialogflow.com/) with your google account and then click the create agent. After sets the assistant, you will see this screen:
 
-![Screenshot](dialogflow.png)
+![Screenshot](images/dialogflow.png)
 
 **Intents** are simple messaging objects that describe how to do something [You can find here](https://developers.google.com/actions/reference/rest/intents).
 There are two Default Intent in chatbot, *"Default Welcome Intent"* and *"Default Fallback Intent"*. I can explain easily Intents and Intents feature with simple example. 
@@ -34,8 +34,8 @@ app.intent('Default Welcome Intent', conv => {
 **How can the Assistant catch the *number* in request ?**
 Assistant uses **entities** to catch specific value in the request. For this example, assistant needs a *number* and there is already  *sys.number* entity defined by default. Entities seems as,
 
-![Entities in Training Phases](trainigphases.JPG)
-![Actions and Paramaters](actionsandparamaters.JPG)
+![Entities in Training Phases](images/trainigphases.JPG)
+![Actions and Paramaters](images/actionsandparamaters.JPG)
 
 To reach these values in backend, *conv.parameters.PARAMATER_NAME* is used.
 
@@ -50,7 +50,7 @@ app.intent('guess_number', conv => {
 After adding intent , entities and necessary code blocks; every wrong guess, assistant decrease the *conv.user.storage.number_of_rights*.
 
 There are two ways to deploy a assistant. If you click Fulfillment tab, you can see this screen. 
-![Fulfillment](Fulfillment.JPG)
+![Fulfillment](images/Fulfillment.JPG)
 
 Inline editor is online development enviroment. *Just type your code and deploy.*
 If you have a web service that listen to request from dialogflow, you can type service url and dialogflow can speak to your service.
@@ -76,7 +76,7 @@ Setup the Firebase feautres, execute this command, then select the functions wit
 ```bash
 firebase init
 ```
-![Firebase CLI](firebase-cli.JPG)
+![Firebase CLI](images/firebase-cli.JPG)
 
 Deploy project and use [Firebase Console](https://firebase.google.com/) to manage your functions.
 ```bash
@@ -84,8 +84,8 @@ firebase deploy
 ```
 To connect your assistant and firebase function, just copy and paste your functions deployed address to the assistant webhook.
 
-![Firebase Functions](firebase-functions.JPG)
-![Webhook](webhook.JPG)
+![Firebase Functions](images/firebase-functions.JPG)
+![Webhook](images/webhook.JPG)
 
 Every thing is done, now your assistant is ready.
 
