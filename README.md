@@ -84,6 +84,11 @@ firebase deploy
 ```
 To connect your assistant and firebase function, just copy and paste your functions deployed address to the assistant webhook.
 
+![Firebase Functions](firebase-functions.JPG)
+![Webhook](webhook.JPG)
+
+Every thing is done, now your assistant is ready.
+
 
 
 
