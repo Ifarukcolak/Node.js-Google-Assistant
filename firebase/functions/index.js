@@ -14,21 +14,23 @@ app.intent('Default Welcome Intent', conv => {
 app.intent('guess_number', conv => {
   console.log('number : ',number);
   console.log('guess : ',conv.parameters.number);
+  
   if(conv.parameters.number==number){
-     conv.close('That is right. Thanks');
+    conv.close('That is right. Thanks');
      }
   else if(conv.user.storage.number_of_rights===1){
-   conv.close("You do not have any right to guess. Sorry :(");
+    conv.close("You do not have any right to guess. Sorry :(");
   }
   else if(conv.user.storage.number_of_rights===2){
-   conv.user.storage.number_of_rights=parseInt(conv.user.storage.number_of_rights)-1;
-   conv.ask("Wrong. Last chance, let's guess");
+    conv.user.storage.number_of_rights=parseInt(conv.user.storage.number_of_rights)-1;
+    conv.ask("Wrong. Last chance, let's guess");
   }
   else{
-    console.log('r:',conv.user.storage.number_of_rights);
+    console.log('rights:',conv.user.storage.number_of_rights);
     conv.user.storage.number_of_rights=parseInt(conv.user.storage.number_of_rights)-1;
-  	conv.ask('Wrong! You have '+conv.user.storage.number_of_rights+ ' rights');
+    conv.ask('Wrong! You have '+conv.user.storage.number_of_rights+ ' rights');
   }
+  
 });
 
 exports.dialogflowFirebaseFulfillment=functions.https.onRequest(app);
